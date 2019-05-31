@@ -8,7 +8,8 @@ const Skills =
     {skill: 'SQL'    , icon: 'sql.png'    ,   id: 5},
     {skill: 'Mongo'  , icon: 'mongo.png'  ,   id: 6},
     {skill: 'Docker' , icon: 'docker.png' ,   id: 7},
-    {skill: 'Jest'   , icon: 'jest.png'   ,   id: 8}
+    {skill: 'Jest'   , icon: 'jest.png'   ,   id: 8},
+    {skill: 'Webpack' , icon:'webpack.png' ,  id: 9}
 ]
 
 export default Skills;
