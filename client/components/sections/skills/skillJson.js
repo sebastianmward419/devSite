@@ -6,6 +6,9 @@ const Skills =
     {skill: 'AWS'    , icon: 'aws.png'    ,   id: 3},
     {skill: 'Git'    , icon: 'git.png'    ,   id: 4},
     {skill: 'SQL'    , icon: 'sql.png'    ,   id: 5},
+    {skill: 'Mongo'  , icon: 'mongo.png'  ,   id: 6},
+    {skill: 'Docker' , icon: 'docker.png' ,   id: 7},
+    {skill: 'Jest'   , icon: 'jest.png'   ,   id: 8}
 ]
 
 export default Skills;
