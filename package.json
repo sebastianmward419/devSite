@@ -13,10 +13,13 @@
   "dependencies": {
     "@babel/preset-env": "^7.4.5",
     "babel-loader": "^8.0.6",
+    "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "nodemon": "^1.19.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-transition-group": "^4.1.0",
+    "twilio": "^3.31.1",
     "webpack": "^4.32.2",
     "webpack-cli": "^3.3.2"
   },

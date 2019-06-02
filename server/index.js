@@ -15,7 +15,7 @@ app.use(bodyParser.json())
 app.post('/api/messageMe', (req, res) => {
     controllers.messageMe(req.body, (error, message) => {    
         
-        error ? console.log(error) : console.log(message.sid);     
+        error ? console.log(error) : res.send(message.sid);     
     });
 });
 
