@@ -8,9 +8,12 @@ class Header extends React.Component {
 
     render() {
         return (
-            <div className='header_headerSection'>
-                <button className='header_buttons'>Contact</button>
-            </div>
+            <ul className='header_headerSection'>             
+                <li className='header_li'>
+                    <a href='https://github.com/sebastianmward419'           className='header_ref'>Github</a>
+                    <a href='https://www.linkedin.com/in/sebastianmward419/' className='header_ref'>Linkedin</a>
+                </li>                
+            </ul>
         )
     }
 }

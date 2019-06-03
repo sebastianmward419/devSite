@@ -5,6 +5,7 @@ import Title from './sections/titleSection.jsx';
 import AboutMe from './sections/aboutMeSection.jsx';
 import SkillsSection from './sections/skills/skillsSection.jsx';
 import MessageMe from './sections/emailSection.jsx';
+//import FancyMan from '../../public/fancyImages/sample.jpg';
 
 class App extends React.Component {
     constructor(props) 

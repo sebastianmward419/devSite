@@ -30,7 +30,7 @@ class Email extends React.Component {
         })
     }
 
-    notifyUser (text, status) {
+    notifyUser (text, status = this.state.statusColor) {
         this.setState(prevState => (
             {
             notified   : !prevState.notified,
@@ -41,7 +41,22 @@ class Email extends React.Component {
     }
 
     checkInputs () {
+        var email   = this.state.email;
+        var phone   = this.state.phoneNumber;
         
+        if (email === '' && phone === '') {
+            this.messageStatus('Please fill out a form of contact', 'bad');
+            return false;
+        } else if (!this.validateEmail(email) && email !== '') {
+            this.messageStatus('Please Fill a valid email', 'bad');
+            return false;
+        }
+
+        return true;
+    }
+
+    validateEmail (email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
     }
 
     handleType (e) {
@@ -60,23 +75,24 @@ class Email extends React.Component {
         const endPoint = '/api/messageMe'
         var   data     = JSON.stringify(this.state);
         var globalThis = this;
-        this.messageStatus('Example', 'good');
-        // fetch(endPoint, {
-        //     method: 'POST',
-        //     headers: 
-        //     {
-        //         'Content-Type': 'application/json',
-        //     },
-        //     body: data
-        // })
-        // .then(response => {
-        //     if (response.status === 200) {
-        //         this.messageStatus('Sent', 'good');
-        //     } else {
-        //         this.messageStatus('Failed', 'bad');
-        //     }
-        // })
         
+        if (this.checkInputs()) {
+            fetch(endPoint, {
+                method: 'POST',
+                headers: 
+                {
+                    'Content-Type': 'application/json',
+                },
+                body: data
+            })
+            .then(response => {
+                if (response.status === 200) {
+                    this.messageStatus('Sent', 'good');
+                } else {
+                    this.messageStatus('Failed', 'bad');
+                }
+            })
+        }
     }
 
 
@@ -90,7 +106,7 @@ class Email extends React.Component {
                 <div>
                     <label>Phone Number       </label><br></br>
                     <input name='phoneNumber' onChange={this.handleType.bind(this)}
-                    id='email_phoneNuberInput' value={this.state.phoneNumber}></input><br></br>
+                    id='email_phoneNuberInput' value={this.state.phoneNumber} type='tel'></input><br></br>
 
                     <label>Email              </label><br></br>
                     <input name='email'       onChange={this.handleType.bind(this)}
